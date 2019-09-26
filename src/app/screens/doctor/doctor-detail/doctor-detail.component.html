@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6">
+    <app-informations [information]="doctorDetail"> </app-informations>
+    <app-address [address]="doctorDetail"></app-address>
+    <app-department [department]="doctorDetail"></app-department>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown>
+      <button
+        type="button"
+        class="btn bt-primary dropdown-toggle" style="background: steelblue">
+        Manage Information<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a style="cursor: pointer;" (click)="onEditInformation()">Edit Information</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteInformation()">Delete Information</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

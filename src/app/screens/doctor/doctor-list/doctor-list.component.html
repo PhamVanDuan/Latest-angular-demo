@@ -1,0 +1,19 @@
+<div class="row">
+  <hr>
+  <div class="col-md-7">
+    <button class="btn btn-sucess" (click)="onNewInformation()" style="background: steelblue">New Doctor</button>
+  </div>
+</div>
+<hr>
+
+<div class="row">
+  <div class="col-md-7">
+    <app-doctor-item
+      *ngFor="let doctorEl of doctors; let i = index"
+      [doctor]="doctorEl" [index]="i"></app-doctor-item>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<hr>
