@@ -6,11 +6,11 @@ export class DoctorModel {
   public city: string;
   public country: string;
   public departmentName: string;
-  public discription: string;
+  public description: string;
 
   constructor(name: string, gender: string, birthday: string,
               address: string, city: string, country: string,
-              departmentName: string, discription: string) {
+              departmentName: string, description: string) {
     this.name = name;
     this.gender = gender;
     this.birthday = birthday;
@@ -18,6 +18,6 @@ export class DoctorModel {
     this.city = city;
     this.country = country;
     this.departmentName = departmentName;
-    this.discription = discription;
+    this.description = description;
   }
 }

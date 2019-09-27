@@ -42,18 +42,32 @@ export class DoctorEditComponent implements OnInit {
       } else {
         this.doctorService.addInformation(this.informationForm.value);
       }
+
+      this.onSetDescription();
       this.dataStorageService.storeDoctorInformations();
       this.onCancel();
+  }
+
+  onSetDescription() {
+    let department = this.informationForm.value['departmentName'];
+    if (department === 'department 1') {
+      this.informationForm.value['description'] = 'This is description for department 1';
+    } else if (department === 'department 2') {
+      this.informationForm.value['description'] = 'This is description for department 2';
+    } else if (department === 'department 3') {
+      this.informationForm.value['description'] = 'This is description for department 3';
+    }
   }
 
   onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
 
+
   private initForm() {
     let name = '', gender = '', birthday = '';
     let address = '', city = '', country = '';
-    let departmentName = '', discription = '';
+    let departmentName = '', description = '';
     if (this.editMode) {
       const information = this.doctorService.getInformation(this.id);
       name = information.name;
@@ -63,7 +77,7 @@ export class DoctorEditComponent implements OnInit {
       city = information.city;
       country = information.country;
       departmentName = information.departmentName;
-      discription = information.discription;
+      description= information.description;
     }
     this.informationForm = new FormGroup({
       name: new FormControl(name, Validators.required),
@@ -73,7 +87,7 @@ export class DoctorEditComponent implements OnInit {
       city: new FormControl(city),
       country: new FormControl(country),
       departmentName: new FormControl(departmentName),
-      discription: new FormControl(discription)
+      description: new FormControl(description),
     });
   }
 

@@ -8,6 +8,24 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+<script>
+    function  autoFill(){
+        let departmentName = document.getElementById('depart').value;
+        if(departmentName === 'department 1')
+        {
+            document.getElementById('description').value= 'This is description for department 1';
+        }
+        if(departmentName ==='department 2')
+        {
+            document.getElementById('description').value= 'This is description for department 2';
+        }
+        if(departmentName === 'department 3')
+        {
+            document.getElementById('description').value= 'This is description for department 3';
+        }
+    }
+</script>
+
   <app-root></app-root>
 </body>
 </html>
